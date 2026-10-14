@@ -1,0 +1,8 @@
+token.json
+client_secret*.json
+*.m4a
+*.wav
+*.mp4
+studio-shots/
+__pycache__/
+*.pyc
