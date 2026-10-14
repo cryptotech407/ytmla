@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ytmla"
+version = "0.1.0"
+description = "Multi-language audio tracks for YouTube: API tooling plus the Studio automation the API does not expose."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ed Nunez", email = "cryptotech407@users.noreply.github.com" }]
+keywords = ["youtube", "localization", "dubbing", "multi-language", "ffmpeg"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Multimedia :: Video",
+]
+dependencies = [
+  "google-api-python-client>=2.100",
+  "google-auth>=2.23",
+  "google-auth-oauthlib>=1.1",
+]
+
+[project.optional-dependencies]
+studio = ["playwright>=1.40"]
+dev = ["pytest>=7.4", "pytest-cov>=4.1"]
+
+[project.scripts]
+ytmla = "ytmla.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/cryptotech407/ytmla"
+Issues = "https://github.com/cryptotech407/ytmla/issues"
+
+[tool.setuptools]
+packages = ["ytmla"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

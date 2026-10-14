@@ -45,9 +45,13 @@ def apply(yt, video_id: str, translations: dict[str, dict],
         merged[lang] = {"title": v["title"], "description": v["description"]}
 
     if default_language not in merged:
-        raise ValueError(
-            f"translations must include '{default_language}': its localization is bound to "
-            "snippet.description, and omitting it lets the default description revert.")
+        # The video's own snippet IS the default-language content, so use it rather than
+        # refusing. This keeps the bound `en` lane populated, which is what stops the
+        # default description reverting when localizations are written.
+        merged[default_language] = {
+            "title": snippet.get("title", ""),
+            "description": snippet.get("description", ""),
+        }
 
     default_text = merged[default_language]["description"]
 
