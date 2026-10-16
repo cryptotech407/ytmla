@@ -6,3 +6,7 @@ client_secret*.json
 studio-shots/
 __pycache__/
 *.pyc
+dist/
+build/
+*.egg-info/
+.venv/
