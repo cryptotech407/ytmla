@@ -1,5 +1,10 @@
 # ytmla
 
+[![PyPI](https://img.shields.io/pypi/v/ytmla.svg)](https://pypi.org/project/ytmla/)
+[![Python](https://img.shields.io/pypi/pyversions/ytmla.svg)](https://pypi.org/project/ytmla/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/cryptotech407/ytmla/actions/workflows/publish.yml/badge.svg)](https://github.com/cryptotech407/ytmla/actions/workflows/publish.yml)
+
 Tooling for putting **multi-language audio tracks** on YouTube videos — the API half, plus
 the Studio half the API doesn't cover.
 
